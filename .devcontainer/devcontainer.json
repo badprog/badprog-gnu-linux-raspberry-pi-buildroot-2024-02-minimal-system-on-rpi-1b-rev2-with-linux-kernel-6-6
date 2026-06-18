@@ -1,0 +1,29 @@
+// badprog.com
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "PROJECT_NAME": "${localWorkspaceFolderBasename}"
+    },
+    "context": ".."
+  },
+  "workspaceFolder": "/workspaces/embedded-linux",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/embedded-linux,type=bind",
+  "remoteUser": "badprog",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.colorCustomizations": {
+          "statusBarItem.remoteBackground": "#ce16f3",
+          "statusBar.background": "#0d22db"
+        }
+      }
+    }
+  }
+}
